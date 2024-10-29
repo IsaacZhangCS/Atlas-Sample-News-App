@@ -20,7 +20,6 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => ArticleProvider()..fetchArticles(),
       child: MaterialApp(
-        title: 'Articles App',
         theme: ThemeData(primarySwatch: Colors.blue),
         home: const MainArticlesScreen(),
       ),
