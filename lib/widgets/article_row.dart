@@ -8,16 +8,17 @@ class ArticleRow extends StatelessWidget {
   final Article article;
   final double imageSize = 50.0;
 
-  const ArticleRow({Key? key, required this.article}) : super(key: key);
+  const ArticleRow({
+    Key? key,
+    required this.article,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
         final Uri url = Uri.parse(article.url);
-        if (await canLaunchUrl(url)) {
-          await launchUrl(url);
-        }
+        if (await canLaunchUrl(url)) await launchUrl(url);
       },
       child: Card(
         margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 12),

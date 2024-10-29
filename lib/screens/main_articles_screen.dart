@@ -17,8 +17,7 @@ class _MainArticlesScreenState extends State<MainArticlesScreen> {
   String _searchTerm = '';
 
   Future<void> _refreshArticles(BuildContext context) async {
-    final articleProvider = Provider.of<ArticleProvider>(context, listen: false);
-    await articleProvider.fetchArticles();
+    await Provider.of<ArticleProvider>(context, listen: false).fetchArticles();
   }
 
   void _onSearchChanged(String searchTerm) {
